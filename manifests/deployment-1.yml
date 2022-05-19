@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "ictproject-d6ab"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "ictproject-d6ab"
+  template:
+    metadata:
+      labels:
+        app: "ictproject-d6ab"
+    spec:
+      containers:
+        - name: "ictproject-d6ab"
+          image: "azureorderict.azurecr.io/ictproject"
+          ports:
+          - containerPort: 80
